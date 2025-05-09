@@ -407,7 +407,7 @@ def main():
             print(f"Error posting message to slack {e}")
     else:
         try:
-            post_to_slack(SLACK_WEBHOOK_URL_EMEA, final_message)
+            post_to_slack(SLACK_WEBHOOK_URL_US, final_message)
         except Exception as e:
             print(f"Error posting message to slack {e}")
 
