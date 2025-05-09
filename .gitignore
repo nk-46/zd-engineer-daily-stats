@@ -1,0 +1,4 @@
+.env
+internal
+__pycache__
+rough.py
