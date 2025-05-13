@@ -55,9 +55,9 @@ def get_day_of_week(target_date=None):
 def determine_shift():
     ist_now = datetime.utcnow() + timedelta(hours=5, minutes=30)
     hour = ist_now.hour
-    if 6 <= hour < 14:
+    if 6 <= hour < 15:
         return "APAC"
-    elif 14 <= hour < 22:
+    elif 14 <= hour < 23:
         return "EMEA"
     else:
         return "PST"
@@ -68,7 +68,7 @@ def get_shift_start_time(shift_name):
     shift_times = {
         "APAC": dt_time(6, 0),
         "EMEA": dt_time(14, 0),
-        "PST": dt_time(22, 0)
+        "PST": dt_time(21, 0)
     }
     shift_ist = datetime.combine(ist_today, shift_times[shift_name])
     if shift_name == "PST" and ist_now.time() < dt_time(6, 0):
