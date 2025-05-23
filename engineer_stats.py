@@ -20,22 +20,22 @@ SLACK_WEBHOOK_URL_US = os.getenv("SLACK_WEBHOOK_URL_US")
 ZAPIER_WEBHOOK_URL = os.getenv("ZAPIER_WEBHOOK_URL")
 
 AGENT_MAP = {
-    "38816121716121": {"name": "Akriti Saxena", "slack" : "@U07QNDMGG87", "shift": "APAC"},
-    "32883524162969": {"name": "Aditya V Dhapte", "slack" : "@U074QGXKM0U" ,"shift": "EMEA"},
-    "30050297796633": {"name": "Smruthi Patgar", "slack" : "@U06PXUMRCJW", "shift": "EMEA"},
-    "25874930116633": {"name": "Shubham Singh", "slack" : "@U067TGEFA1Y", "shift": "APAC"},
-    "24453369793177": {"name": "Vedik Ramesh", "slack" : "@U06294G1GBU", "shift": "EMEA"},
-    "24367218021657": {"name": "Aravind S", "slack" : "@U061PBYDVLM", "shift": "APAC"},
-    "20667761359257": {"name": "Ankita Pradhan", "slack" : "@U05GPEQRHKM", "shift": "APAC"},
-    "20305094397977": {"name": "Abhishek Srivastava", "slack" : "@U05F3EVQXEH", "shift": "EMEA"},
-    "18216981797273": {"name": "Shiekh Furqaan Ahmad", "slack" : "@U0562STKX9A", "shift": "PST"},
-    "14618544026137": {"name": "Yukthi K Mathad","slack" : "@U04K22FNK1A", "shift": "EMEA"},
-    "6952913318681": {"name": "Mohammed Jazeer B", "slack" : "@U03GHSDLA4X", "shift": "EMEA"},
-    "5268436329625": {"name": "Eric Manning", "slack" : "@U038PQ0LWTG", "shift": "PST"},
-    "903254421006": {"name": "Srinonti Biswas", "slack" : "@U02HA8PG27M", "shift": "PST"},
-    "420031063951": {"name": "Ankur Shrivastava", "slack" : "@U02J3DWBY07", "shift": "PST"},
-    "416520165912": {"name": "Ezhava Manuja", "slack" : "@U022M2NT3MG", "shift": "APAC"},
-    "395885198352": {"name": "Steven Decker", "slack": "@U01A5UKPF38", "shift": "PST"}
+    "38816121716121": {"name": "Akriti Saxena", "slack" : "U07QNDMGG87", "shift": "APAC"},
+    "32883524162969": {"name": "Aditya V Dhapte", "slack" : "U074QGXKM0U" ,"shift": "EMEA"},
+    "30050297796633": {"name": "Smruthi Patgar", "slack" : "U06PXUMRCJW", "shift": "EMEA"},
+    "25874930116633": {"name": "Shubham Singh", "slack" : "U067TGEFA1Y", "shift": "APAC"},
+    "24453369793177": {"name": "Vedik Ramesh", "slack" : "U06294G1GBU", "shift": "EMEA"},
+    "24367218021657": {"name": "Aravind S", "slack" : "U061PBYDVLM", "shift": "APAC"},
+    "20667761359257": {"name": "Ankita Pradhan", "slack" : "U05GPEQRHKM", "shift": "APAC"},
+    "20305094397977": {"name": "Abhishek Srivastava", "slack" : "U05F3EVQXEH", "shift": "EMEA"},
+    "18216981797273": {"name": "Shiekh Furqaan Ahmad", "slack" : "U0562STKX9A", "shift": "PST"},
+    "14618544026137": {"name": "Yukthi K Mathad","slack" : "U04K22FNK1A", "shift": "EMEA"},
+    "6952913318681": {"name": "Mohammed Jazeer B", "slack" : "U03GHSDLA4X", "shift": "EMEA"},
+    "5268436329625": {"name": "Eric Manning", "slack" : "U038PQ0LWTG", "shift": "PST"},
+    "903254421006": {"name": "Srinonti Biswas", "slack" : "U02HA8PG27M", "shift": "PST"},
+    "420031063951": {"name": "Ankur Shrivastava", "slack" : "U02J3DWBY07", "shift": "PST"},
+    "416520165912": {"name": "Ezhava Manuja", "slack" : "U022M2NT3MG", "shift": "APAC"},
+    "395885198352": {"name": "Steven Decker", "slack": "U01A5UKPF38", "shift": "PST"}
 }
 
 ESCALATION_TAGS = {"escalated_customer", "escalated_yes"}
@@ -327,7 +327,7 @@ def format_message(summary):
         agent = AGENT_MAP.get(aid)
         if not agent or agent["shift"] != shift:
             continue
-        lines.append(f"{agent['slack']}:")
+        lines.append(f"<@{agent['slack']}>:")
         lines.append(f"Total Tickets: {s['Total Tickets'] or 'None'}")
         lines.append(f"Escalated Tickets: {s['Escalated Tickets'] or 'None'}")
         lines.append(f"Escalated Ticket IDs: {s['Escalated Ticket IDs'] or 'None'}")
