@@ -1,4 +1,5 @@
 import os
+import pytz
 from dotenv import load_dotenv
 import requests
 from collections import defaultdict
@@ -50,11 +51,13 @@ def get_day_of_week(target_date=None):
     return target_date.strftime("%A")
 
 def determine_shift():
-    ist_now = datetime.utcnow() + timedelta(hours=5, minutes=30)
+    ist = pytz.timezone("Asia/Kolkata")
+    ist_now = datetime.now(ist)
     hour = ist_now.hour
-    if 6 <= hour < 15:
+
+    if 6 <= hour < 14:
         return "APAC"
-    elif 14 <= hour < 23:
+    elif 14 <= hour < 22:
         return "EMEA"
     else:
         return "PST"
