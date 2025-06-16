@@ -31,12 +31,11 @@ AGENT_MAP = {
     "20305094397977": {"name": "Abhishek Srivastava", "slack" : "U05F3EVQXEH", "shift": "EMEA"},
     "18216981797273": {"name": "Shiekh Furqaan Ahmad", "slack" : "U0562STKX9A", "shift": "PST"},
     "14618544026137": {"name": "Yukthi K Mathad","slack" : "U04K22FNK1A", "shift": "EMEA"},
-    "6952913318681": {"name": "Mohammed Jazeer B", "slack" : "U03GHSDLA4X", "shift": "EMEA"},
+    "6952913318681": {"name": "Mohammed Jazeer B", "slack" : "U03GHSDLA4X", "shift": "PST"},
     "5268436329625": {"name": "Eric Manning", "slack" : "U038PQ0LWTG", "shift": "PST"},
     "903254421006": {"name": "Srinonti Biswas", "slack" : "U02HA8PG27M", "shift": "PST"},
     "420031063951": {"name": "Ankur Shrivastava", "slack" : "U02J3DWBY07", "shift": "PST"},
     "416520165912": {"name": "Ezhava Manuja", "slack" : "U022M2NT3MG", "shift": "APAC"},
-    "395885198352": {"name": "Steven Decker", "slack": "U01A5UKPF38", "shift": "PST"}
 }
 
 ESCALATION_TAGS = {"escalated_customer", "escalated_yes"}
